@@ -32,4 +32,15 @@ This generator is written in `source/src/rockParticleGun.cc`.
 line 187 - 
 
 Now, Mizukoshi generator is out.
+```
+    // -- AndleX is the angle from normal line of sphere
+    // -- Mizukoshi generator
+    // -- Cos weighted generator
+    // -- cumulative distribution function of cos
+    //
+    //G4double angleX = asin(2*RandFlat::shoot(0.0,1.0)-1.0);
+    
+    // -- Taisyaku generator
+    G4double angleX = RandFlat::shoot(0.0,pi);
 
+```
