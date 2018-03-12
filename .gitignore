@@ -1,0 +1,10 @@
+build/*
+bin/*
+bench/rock.out
+bench/*.out
+bench/G4History.macro
+bench/*.root
+bench/currentEvent.rndm
+bench/currentRun.rndm
+vis/*
+bench/.*

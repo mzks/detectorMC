@@ -1,0 +1,62 @@
+# create physics
+/physics_lists/em/GammaNuclear true
+/physics_lists/em/MuonNuclear true
+
+# change detector parameter
+/rock/det/setField 0.0 tesla
+/rock/det/setMaxStep  0.1 cm
+
+#inactivate msc
+#/process/inactivate msc
+
+
+## coloring by Particle ID
+#/vis/modeling/trajectories/create/drawByParticleID Color
+##/vis/modeling/trajectories/Color/set e- red
+#/vis/modeling/trajectories/Color/set mu- blue
+#/vis/modeling/trajectories/Color/set gamma green
+#/vis/modeling/trajectories/Color/set neutron yellow
+##/vis/modeling/trajectories/Color/default/setDrawStepPts true
+#/vis/modeling/trajectories/Color/default/setStepPtsSize 5
+##/vis/modeling/trajectories/Color/default/setDrawAuxPts true
+#/vis/modeling/trajectories/Color/default/setAuxPtsSize 5
+#/control/alias interval 0,01
+#/control/alias halfInterval 0,005
+##/vis/modeling/trajectories/Color/default/setTimeSliceInterval {interval} ns
+#/vis/modeling/trajectories/list
+
+#Remove nu
+#/vis/filtering/trajectories/create/particleFilter ColorFilter
+#/vis/filtering/trajectories/ColorFilter/add nu_e
+#/vis/filtering/trajectories/ColorFilter/add gamma
+#/vis/filtering/trajectories/ColorFilter/invert true
+
+#/gun/rock/vtx 1 #top
+#/gun/rock/particle 2 #n
+/rock/det/setBoronSize 5.0 mm
+
+##total neutron flux
+/gun/rock/vtx 3 #flux
+/gun/rock/particle 4 #real n spectrum
+
+##Cf source fission
+#/gun/rock/vtx 0 #User
+#/gun/position 20 0 0 cm
+#/gun/rock/particle 5 #fission
+
+#/gun/particle neutron
+#/gun/energy 5.0 MeV
+##/gun/position 10 0 0 cm
+#/gun/position 0 0 40 cm
+#/gun/direction 0 0 -1
+
+#Eff check
+#/gun/rock/energy 3 MeV
+#/gun/rock/vtx 3 #Putflux
+#/gun/rock/particle 3 #Random neutron
+
+#/tracking/verbose 1
+
+/run/initialize
+/run/beamOn 100000
+

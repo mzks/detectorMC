@@ -1,0 +1,13 @@
+
+# change detector parameter
+/rock/det/setField 1.0 tesla
+/rock/det/setMaxStep  1.0 cm
+
+#inactivate msc
+#/process/inactivate msc
+
+# mu+ 10 GeV 
+/gun/particle mu+
+/gun/energy 10.0 GeV
+/run/beamOn 1000
+
