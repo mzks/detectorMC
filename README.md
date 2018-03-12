@@ -1,5 +1,17 @@
 # README
 
+## How to run
+
+```
+$ mkdir build
+$ cd build
+$ cmake ../source
+$ make && make install
+$ cd ../bench
+$ ../bin/rock rock.mac
+```
+
+## Generator information
 Main macro is bench/rock.mac
 
 ```
