@@ -28,5 +28,8 @@ Main macro is bench/rock.mac
 Using `/gun/rock/particle 4`, create real flux.
 Neutron spectrum is ascii table, `total_table.dat`.
 
+This generator is written in `source/src/rockParticleGun.cc`.
+line 187 - 
 
+Now, Mizukoshi generator is out.
 

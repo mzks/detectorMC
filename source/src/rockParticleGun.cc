@@ -184,8 +184,17 @@ void rockParticleGun::GenerateFluxNeutronSp(G4PrimaryParticle* neutron[1],G4Thre
 	G4double prob = RandFlat::shoot(0.0,1.0);
 	neutron[0]->SetKineticEnergy( LogLogInterpolatorCalculateSp(prob) * MeV); //real spectrum
 
+    // -- AndleX is the angle from normal line of sphere
+    // -- Mizukoshi generator
+    // -- Cos weighted generator
+    // -- cumulative distribution function of cos
+    //
     //G4double angleX = asin(2*RandFlat::shoot(0.0,1.0)-1.0);
+    
+    // -- Taisyaku generator
     G4double angleX = RandFlat::shoot(0.0,pi);
+
+
     G4double delta = RandFlat::shoot(0.0,pi);
 
     G4ThreeVector momVec;
